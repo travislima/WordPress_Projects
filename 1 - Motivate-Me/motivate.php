@@ -9,6 +9,8 @@ License:      GPL2
 License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 */
 
+/* A simple start to a simple Plugin */
+
 function motivation_quote_gen() {
 	$quote = array( 
 
@@ -23,3 +25,33 @@ function motivation_quote_gen() {
 }
 
 add_shortcode( 'motivate-me', 'motivation_quote_gen' );
+
+
+
+
+/* Adding an Admin Menu */
+
+function motivate_me_admin_menu() {
+
+	add_menu_page( 'Random Motivational Quote Generator', 'Motivate Me', 'manage_options', 'motivate-me-admin-menu', 'motivate_me_page', 'dashicons-smiley', 200 );
+
+}
+
+add_action( 'admin_menu','motivate_me_admin_menu' );
+
+function motivate_me_page() {
+
+	?>
+
+	<h2>Update your motivate me page!</h2>
+
+	<p>If you made it all the way here, well done! And, sorry! There is nothing very exciting to see here.</p>
+	<h3>New WP Projects coming soon!</h3>
+
+	<h1>Now, go. Conquer the day!</h1>
+
+	<?php
+
+}
+
+
