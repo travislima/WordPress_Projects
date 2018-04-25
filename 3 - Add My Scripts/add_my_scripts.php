@@ -67,3 +67,13 @@ function add_my_scripts_page() {
 
 <?php
 } //close function
+
+
+//Display Scripts
+
+function add_my_scripts_display_scripts() {
+    
+    
+}
+
+
