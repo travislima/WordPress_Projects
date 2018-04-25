@@ -69,15 +69,29 @@ function add_my_scripts_page() {
 } //close function
 
 
-//Display Scripts
+//Display Header Scripts
 
-function add_my_scripts_display_scripts() {
+function add_my_scripts_display_header_scripts() {
     
     $header_scripts = get_option( 'add_my_scripts_header_scripts', 'None' );
     print $header_scripts;
     
 }
 
-add_action( 'wp_head','add_my_scripts_display_scripts' );
+add_action( 'wp_head','add_my_scripts_display_header_scripts' );
+
+
+//Display Footer Scripts
+
+function add_my_scripts_display_footer_scripts() {
+    
+    $footer_scripts = get_option( 'add_my_scripts_footer_scripts', 'None' );
+    print $footer_scripts;
+    
+}
+
+add_action( 'wp_head','add_my_scripts_display_footer_scripts' );
+
+
 
 
