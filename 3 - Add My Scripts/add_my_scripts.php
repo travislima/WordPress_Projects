@@ -73,7 +73,11 @@ function add_my_scripts_page() {
 
 function add_my_scripts_display_scripts() {
     
+    $header_scripts = get_option( 'add_my_scripts_header_scripts', 'None' );
+    print $header_scripts;
     
 }
+
+add_action( 'wp_head','add_my_scripts_display_scripts' );
 
 
