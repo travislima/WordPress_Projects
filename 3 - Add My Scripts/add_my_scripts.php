@@ -90,7 +90,7 @@ function add_my_scripts_display_footer_scripts() {
     
 }
 
-add_action( 'wp_head','add_my_scripts_display_footer_scripts' );
+add_action( 'wp_foot','add_my_scripts_display_footer_scripts' );
 
 
 
