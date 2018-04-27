@@ -10,8 +10,6 @@ License URI:  https://www.gnu.org/licenses/gpl-2.0.html
 */
 
 
-// Scripts not saving - need to debug.
-
 /* Adding an Admin Menu */
 
 function add_my_scripts_admin_menu() {
@@ -75,7 +73,7 @@ function add_my_scripts_page() {
 
 function add_my_scripts_display_header_scripts() {
     
-    $header_scripts = get_option( 'add_my_scripts_header_scripts', 'None' );
+    $header_scripts = get_option( 'add_my_scripts_header_scripts', 'none' );
     print $header_scripts;
     
 }
@@ -87,12 +85,17 @@ add_action( 'wp_head','add_my_scripts_display_header_scripts' );
 
 function add_my_scripts_display_footer_scripts() {
     
-    $footer_scripts = get_option( 'add_my_scripts_footer_scripts', 'None' );
+    $footer_scripts = get_option( 'add_my_scripts_footer_scripts', 'none' );
     print $footer_scripts;
     
 }
 
 add_action( 'wp_footer','add_my_scripts_display_footer_scripts' );
+
+//Says it is saving but not really... need to test and debug...
+
+
+
 
 
 
