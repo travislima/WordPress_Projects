@@ -16,16 +16,16 @@ function kool_form () {
 	$content .= '<form method="post" action="http://plugin.local/thank-you/" />';
 
 		$content .= '<input type="text" name="fullname" placeholder="Your Full Name" />';
-		$content .= '<br />';
+		
 
 		$content .= '<input type="text" name="email" placeholder="Your Email Address" />';
-		$content .= '<br />';
+		
 
 		$content .= '<input type="text" name="phone" placeholder="Your Phone Number" />';
-		$content .= '<br />';
+		
 
 		$content .= '<textarea name="comments" placeholder="Give us your comments" /></textarea>';
-		$content .= '<br />';
+		
 
 		$content .= '<input type="submit" name="kool_form_submit_form" Value="Submit your information">';
 		
@@ -49,8 +49,12 @@ function kool_form_capture () {
 		$subject = "Website Form Submission";
 		$body = '';
 
-		$body .= 'Name: '.$_POST['fullname']. ' <br /> ';
-		$body .= 'Email: '.$_POST['email']. ' <br /> ';
+		$body .= 'Name: '.$_POST['fullname'];
+		$body .= 'Email: '.$_POST['email'];
+		$body .= 'Phone: '.$_POST['phone'];
+		$body .= 'Comments: '.$_POST['comments'];
+
+		wp_mail($to, $subject, $body);
 
 	}
 
