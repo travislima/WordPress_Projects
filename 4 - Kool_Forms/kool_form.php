@@ -2,7 +2,7 @@
 /*
 Plugin Name:  Kool Form
 Description:  Basic WordPress Form Plugin
-Version:      0.1
+Version:      0.4
 Author:       travislima
 Author URI:   https://travislima.com
 License:      GPL2
@@ -39,6 +39,12 @@ function kool_form () {
 add_shortcode ( 'koolform', 'kool_form' );
 
 
+function set_html_content_email() {
+
+	return 'text/html';
+}
+
+
 
 function kool_form_capture () {
 
@@ -54,7 +60,11 @@ function kool_form_capture () {
 		$body .= 'Phone: '.$_POST['phone'];
 		$body .= 'Comments: '.$_POST['comments'];
 
+
+		add_filter('wp_mail_content_type', 'set_html_content_email');
 		wp_mail($to, $subject, $body);
+
+		remove_filter('wp_mail_content_type', 'set_html_content_email');
 
 	}
 
